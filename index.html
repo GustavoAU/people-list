@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleList.css">
+    <link rel="stylesheet" href="queries.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>People List</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+</head>
+<body>
+<h1 class="title">People List Manager</h1>
+
+  <div class="container">
+
+    <div class="wrapperInputs">
+      <div class="add-platform">
+        <h3 class="inputs-title">Registration</h3>
+        <div>
+          <input type="text" id="name" placeholder="Name" name="name"> 
+        </div>
+        <div>
+          <input type="text" id="city" placeholder="City" name="city"> 
+          <input type="text" id="zipcode" placeholder="ZipCode" name="zipcode"> 
+        </div>
+        <div>
+          <input type="number" id="phone" placeholder="Phone" name="phone"> 
+          <input type="email" id="email" placeholder="Email" name="email"> 
+        </div>
+        <div>
+        <button id="add-new-person" class="add-person">Add new person</button>
+        </div>
+      </div>
+      <div>
+        <div class="search-people">
+          <h2 class="inputs-title">Search Person</h2>
+          <input type="text" id="searching" placeholder="searching"> 
+          <button id="btn-clear-filter" class="btn-clear">X</button>
+          <button id="btn-order-list" class="btn-order">Descending</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div  class="container">
+  <div id="containerList" class="wrapperList">
+
+  </div>
+</div> 
+    <script src="main.js"></script>
+</body>
+</html>

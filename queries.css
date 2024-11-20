@@ -1,0 +1,38 @@
+@media  screen and  (max-width: 1280px) {
+    .list-element {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapperList{
+        flex-direction: column;
+    }
+    .list-element {
+        width: 50%;
+    }
+
+    .list-element {
+        width: 80%;
+    }
+    .wrapperInputs{
+        flex-direction: column;
+    }
+
+    .search-people{
+        width: 80%;
+    }
+    
+    .add-platform {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .list-element {
+        width: 80%;
+    }
+    .wrapperInputs{
+        flex-direction: column;
+    }
+}
