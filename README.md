@@ -32,7 +32,7 @@ To get started with the People List project, follow these steps:
    ```
 
 2. **Navigate to the Project Directory**:
-   ![alt text](image.png)
+   `cd people-list`
 
 3. **Open the Project in Your Preferred Code Editor**
 

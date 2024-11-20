@@ -54,7 +54,7 @@ const removePersonList = (userId) => {
     );
   }
 
-  createList();
+  updateMasterList();
   renderList();
 };
 
@@ -65,11 +65,9 @@ const findExistingPerson = (personId) => {
   return foundPerson;
 };
 
-const createList = () => {
-  const existingAndAddPeopleList = [...existingPeopleList, ...addPeopleList];
-  //(existingPeopleList + addPeopleList) - removePeopleList
-  //      sumList
-  masterList = existingAndAddPeopleList.filter((existingPerson) => {
+const updateMasterList = () => {
+  const mergedExistingAndPeopleList = [...existingPeopleList, ...addPeopleList];
+  masterList = mergedExistingAndPeopleList.filter((existingPerson) => {
     return !removePeopleList.some((removePerson) => {
       return removePerson.id === existingPerson.id;
     });
@@ -80,9 +78,19 @@ const isPersonInsideGroup = (list, userId) => {
   return list.some((person) => person.id === parseInt(userId));
 };
 
+const orderByName = (list, orderType) => {
+  return list.sort((a, b) => {
+    if (orderType === "asc") {
+      return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1;
+    } else {
+      return a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1;
+    }
+  });
+};
+
 getPeople().then((dataUsers) => {
   existingPeopleList = dataUsers;
-  createList();
+  updateMasterList();
   renderList();
 });
 
@@ -96,9 +104,8 @@ addPersonButton.addEventListener("click", () => {
   const city = document.getElementById("city").value;
   const zipcode = document.getElementById("zipcode").value;
 
-  console.log("Creacion del id del nuevo user", id);
   if (!name || !phone || !email || !city || !zipcode) {
-    alert("name is required");
+    alert("all fields are required");
     return;
   }
 
@@ -110,8 +117,7 @@ addPersonButton.addEventListener("click", () => {
     address: { city, zipcode },
   };
   addPeopleList.push(newPerson);
-  console.log(addPeopleList);
-  createList();
+  updateMasterList();
   renderList();
 });
 
@@ -124,48 +130,30 @@ searchingInput.addEventListener("input", (event) => {
   );
   masterList = searchingPerson;
   renderList();
-  createList();
+  updateMasterList();
 });
-
-// findPersonButton.addEventListener("click", () => {
-//   const searchingPerson = masterList.filter((person) =>
-//     person.name.toLowerCase().includes(searchingInput.value.toLowerCase())
-//   );
-//   masterList = searchingPerson;
-//   renderList();
-//   createList();
-// });
 
 const clearFilterButton = document.getElementById("btn-clear-filter");
 
 clearFilterButton.addEventListener("click", () => {
   searchingInput.value = "";
-  createList();
+  updateMasterList();
   renderList();
 });
 
-const orderByName = (list, orderType) => {
-  return list.sort((a, b) => {
-    if (orderType === "asc") {
-      return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1;
-    } else {
-      return a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1;
-    }
-  });
-};
+const OrderListButton = document.getElementById("btn-order-list");
 
-const btnOrderList = document.getElementById("btn-order-list");
-
-btnOrderList.addEventListener("click", () => {
-  console.log(currentOrderType);
+OrderListButton.addEventListener("click", () => {
   currentOrderType = currentOrderType === "asc" ? "des" : "asc";
   masterList = orderByName(masterList, currentOrderType);
 
   if (currentOrderType === "asc") {
-    btnOrderList.innerHTML = "Descending";
+    OrderListButton.innerHTML = "Descending";
   } else {
-    btnOrderList.innerHTML = "Ascending";
+    OrderListButton.innerHTML = "Ascending";
   }
 
   renderList();
 });
+
+

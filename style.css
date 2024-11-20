@@ -6,6 +6,7 @@
 
 body {
     background-color: #fdfdfd;
+    color:#222;
     font-family: "Inter", sans-serif;
 }
 
@@ -15,7 +16,13 @@ body {
     padding: 20px;  
 }
 
-.wrapperList{
+.title {
+    font-size: 32px;
+    text-align: center;
+    padding: 15px 30px;
+}
+
+.wrapper-list{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -31,6 +38,17 @@ body {
     border-radius: 1cqh;
     filter: drop-shadow(0 0 2px #575757);
     background-color: #ffffff;  
+}
+
+.elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-element {
+    display: flex;
+    gap: 15px;
 }
 
 .list-link {
@@ -50,17 +68,6 @@ body {
     font-size: 20px;
 }
 
-.elements {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.links-element {
-    display: flex;
-    gap: 15px;
-}
-
 .icon-link {
     display: flex;
     width: 25px;
@@ -72,7 +79,7 @@ body {
     justify-content: center;
 }
 
-a{
+a {
     color: #F5F5F5 ;
     font-weight: 900;
     
@@ -95,38 +102,6 @@ a:hover {
     background-color: rgb(105, 105, 105);
 }
 
-.title {
-    font-size: 32px;
-    text-align: center;
-    padding: 15px 30px;
-    color: #222;
-}
-
-.inputs-title{
-    color: #222;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.add-person{
-    display: inline-block;
-    background-color: #00BFFF;
-    color: #F5F5F5;
-    width: 100%;
-    height: 40px;
-    border-radius: 10cqh;
-    border-style: none;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.add-person:hover {
-    background-color: #52ccf5;
-    color:#222;
-}
-
 .add-platform {
     display: flex;
     flex-direction: column;
@@ -140,14 +115,6 @@ a:hover {
     background-color: #ffffff;  
 }
 
-.add-platform input {
-    display: flex;
-    padding: 5px 10px;
-    width: 100%;
-    height: 100%;
-    border-radius: 15cqh;
-}
-
 .add-platform div {
     display: flex;
     flex-direction: column;
@@ -156,11 +123,6 @@ a:hover {
 
 .add-platform h2 {
     font-size: 16px;
-}
-
-.wrapperInputs {
-    display: flex;
-    gap: 30px;
 }
 
 .search-people{
@@ -177,12 +139,71 @@ a:hover {
     background-color: #ffffff;  
 }
 
+.wrapper-inputs {
+    display: flex;
+    gap: 30px;
+}
+
+.inputs-title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.add-platform input {
+    display: flex;
+    padding: 5px 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15cqh;
+}
+
 .search-people input {
     display: flex;
     padding: 5px 10px;
     width: 100%;
     height: 100%;
     border-radius: 15cqh;
+}
+
+::placeholder {
+    color: #555;
+    font-weight: 700;
+}
+
+.btn-add-person {
+    display: inline-block;
+    background-color: #00BFFF;
+    color: #F5F5F5;
+    width: 100%;
+    height: 40px;
+    border-radius: 10cqh;
+    border-style: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-add-person:hover {
+    background-color: #52ccf5;
+}
+
+.btn-remove {
+    display: inline-block;
+    background-color: #00BFFF;
+    color: #F5F5F5;
+    width: 100%;
+    height: 40px;
+    border-radius: 10cqh;
+    border-style: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-remove:hover{
+    background-color: #52ccf5;
 }
 
 .btn-order {
@@ -199,15 +220,9 @@ a:hover {
     font-weight: 600;
 }
 
-
 .btn-order:hover{
     background-color: #52ccf5;
-    color:#222
-}
-
-::placeholder {
-    color: #555;
-    font-weight: 700;
+    
 }
 
 .btn-clear {
@@ -229,21 +244,3 @@ a:hover {
     background-color: #888;
 }
 
-.btn-remove {
-    display: inline-block;
-    background-color: #00BFFF;
-    color: #F5F5F5;
-    width: 100%;
-    height: 40px;
-    border-radius: 10cqh;
-    border-style: none;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.btn-remove:hover{
-    background-color: #52ccf5;
-    color:#222
-}

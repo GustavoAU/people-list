@@ -5,17 +5,14 @@
 }
 
 @media screen and (max-width: 768px) {
-    .wrapperList{
+    .wrapper-list{
         flex-direction: column;
-    }
-    .list-element {
-        width: 50%;
     }
 
     .list-element {
         width: 80%;
     }
-    .wrapperInputs{
+    .wrapper-inputs{
         flex-direction: column;
     }
 
@@ -32,7 +29,8 @@
     .list-element {
         width: 80%;
     }
-    .wrapperInputs{
+
+    .wrapper-inputs{
         flex-direction: column;
     }
 }
