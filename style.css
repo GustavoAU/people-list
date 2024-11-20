@@ -186,6 +186,7 @@ a:hover {
 
 .btn-add-person:hover {
     background-color: #52ccf5;
+    color:#222;
 }
 
 .btn-remove {
@@ -204,6 +205,7 @@ a:hover {
 
 .btn-remove:hover{
     background-color: #52ccf5;
+    color:#222;
 }
 
 .btn-order {
@@ -222,7 +224,7 @@ a:hover {
 
 .btn-order:hover{
     background-color: #52ccf5;
-    
+    color:#222;
 }
 
 .btn-clear {
